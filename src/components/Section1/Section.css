@@ -1,0 +1,47 @@
+
+
+.avatar{
+    margin-top: 60px;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+}
+.btn{
+    background-color: #69B99D;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+
+.sec1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text1{
+    text-align: center;
+}
+
+
+
+
+
+@media (min-width: 768px){
+    .sec1{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tx1{
+        font-size: 38px;
+    }
+    .avatar{
+        width: 700px;
+        height: 400px;
+    }
+    .text1{
+        text-align: end;
+
+    }
+}

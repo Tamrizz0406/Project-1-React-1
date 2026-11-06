@@ -1,0 +1,56 @@
+
+
+.txt{
+    text-align: start;
+    margin-top: 100px;
+    padding: 10px;
+}
+
+
+.box{
+    border-color: #FFFFFF;
+    background-color: white;
+    padding: 10px;
+    width: 300px;
+    flex-shrink: 0;
+}
+.box:hover{
+    background-color: #00000014;
+}
+
+.pers{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.boxes{
+    display: flex;
+    overflow-x: auto;
+
+}
+
+
+
+
+@media (min-width:768px){
+.boxes {
+    overflow-x: visible;
+    display: flex;
+    justify-content: space-between;
+  }
+  .txt{
+    text-align: center;
+  }
+  .box{
+    padding: 20px 40px;
+  }
+  .box{
+    background-color: #00000014;
+    width: 400px;
+}
+
+
+
+
+}

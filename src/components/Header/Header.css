@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bar {
+  width: 24px;
+  height: 24px;
+}
+
+.page {
+  display: none;      
+}
+
+@media (min-width: 768px) {
+    body{
+        max-width: 1200px;
+        margin: auto;
+    }
+  .bar {
+    display: none;    
+  }
+
+  .page {
+    display: flex;  
+    gap: 30px;
+  }
+}
