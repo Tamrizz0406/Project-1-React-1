@@ -1,31 +1,28 @@
-import "./Section.css"
-import ava from "../../assets/Img(1) copy 2.png"
+import "./Section.css";
+import Card1 from "../Card1/Card1";
 
-function Section4() {
+import apple from "../../assets/icn svg.png";
+import google from "../../assets/icn svg copy.png";
+import amazon from "../../assets/Vector.png";
+import windows from "../../assets/Vector copy.png";
+
+function Section5() {
   return (
-    <section>
-        <div>
-            <h1 className="txt">Depoimentos de quem já <br /> passou por aqui</h1>
-        </div>
-        <div className="boxes">
-        <div className="box">
-            <p>Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.</p>
-            <div className="pers">
-                <img src={ava} alt="" />
-                <p>Luna Falcão</p>
-            </div>
-        </div>
-        <div className="box">
-            <p>Minha mãe frequenta o salão há anos e me levou um dia para conhecer. Minha experiência foi incrível, eu continuo fazendo o a terapia capilar e isso salvou o meu cabelo. Adoro todos os profissionais do Beautysalon.</p>
-            <div className="pers">
-                <img src={ava} alt="" />
-                <p>Luna Falcão</p>
-            </div>
-        </div>
+    <section className="download">
+      <h2 className="download__title">Download Our App</h2>
+      <p className="download__subtitle">
+        Problems trying to resolve the conflict between <br />
+        the two major realms of Classical physics: Newtonian mechanics
+      </p>
 
-        </div>
+      <div className="download__buttons">
+        <Card1 icon={apple} store="App Store" />
+        <Card1 icon={google} store="Google Play" />
+        <Card1 icon={amazon} store="Amazon.com" />
+        <Card1 icon={windows} store="Windows Store" />
+      </div>
     </section>
-  )
+  );
 }
 
-export default Section4
+export default Section5;

@@ -1,0 +1,87 @@
+.book {
+  background-color: #252B42;
+  padding: 40px 16px;
+}
+
+.bookWrap {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.bookImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.bookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+}
+
+.bookTitle {
+  font-size: 24px;
+  color: #252B42;
+  text-align: center;
+}
+
+.bookField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookLabel {
+  font-size: 14px;
+  font-weight: 700;
+  color: #252B42;
+}
+
+.bookInput {
+  padding: 14px 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background-color: #fafafa;
+  font-size: 14px;
+  color: #737373;
+}
+
+.bookBtn {
+  padding: 16px;
+  background-color: #23A6F0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.bookBtn:hover {
+  background-color: #1b8bcb;
+}
+
+@media (min-width: 768px) {
+  .book {
+    padding: 80px 16px;
+  }
+
+  .bookWrap {
+    flex-direction: row;
+  }
+
+  .bookImg {
+    width: 320px;
+    height: auto;
+  }
+
+  .bookForm {
+    flex: 1;
+    padding: 48px;
+  }
+}

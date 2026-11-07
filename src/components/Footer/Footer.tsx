@@ -1,43 +1,39 @@
 import "./Footer.css"
-import avv1 from "../../assets/phone 1.png"
-import avv2 from "../../assets/map-pin 1.png"
-import avv3 from "../../assets/mail 1.png"
-import avv4 from "../../assets/Redes sociais.png"
-import avv5 from "../../assets/Logo(3) copy.png"
+import soc from "../../assets/social media.png"
+
+
 
 function Footer() {
   return (
-    <section>
-      <div className="foot">
-        <div>
-            <h1>Entre em contato com a gente!</h1>
-            <p>Entre em contato com a Beautysalon, <br /> queremos tirar suas dúvidas, ouvir suas <br /> críticas e sugestões.</p>
-            <button className="btn">Entrar em contato</button>
-        </div>
-        <div>
-            <div className="divv">
-                <img src={avv1} alt="" />
-                <p>Entrar em contato</p>
-            </div>
-            <div className="divv">
-                <img src={avv2} alt="" />
-                <p>R. Amauri Souza, 346</p>
-            </div>
-            <div className="divv">
-                <img src={avv3} alt="" />
-                <p>contato@beautysalon.com</p>
-            </div>
-        </div>
+    <div className="foot">
+      <div>
+        <h2 className="h22">Get In Touch</h2>
+        <p>the quick fox jumps over the lazy dog</p>
+        <img src={soc} alt="" />
       </div>
-      <div className="footT">
-        <div className="left">
-            <img src={avv5} alt="" />
-            <p>©2021 Beautysalon.</p>
-            <p>Todos os direitos reservados.</p>
-        </div>
-        <img src={avv4} alt="" />
+      <div>
+        <h2 className="h22">Company info</h2>
+        <p>About Us</p>
+        <p>Carrier</p>
+        <p>We are hiring</p>
+        <p>Blog</p>
       </div>
-    </section>
+      <div>
+        <h2 className="h22">Features</h2>
+        <p>Business Marketing</p>
+        <p>User Analytic</p>
+        <p>Live Chat</p>
+        <p>Unlimited Support</p>
+      </div>
+      <div>
+        <h2 className="h22">Resources</h2>
+        <p>IOS & Android</p>
+        <p>Watch a Demo</p>
+        <p>Customers</p>
+        <p>API</p>
+      </div>
+    </div>
   )
 }
+
 export default Footer

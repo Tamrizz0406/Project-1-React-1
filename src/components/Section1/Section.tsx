@@ -1,19 +1,21 @@
-
 import "./Section.css"
-import ava from "../../assets/Img(1).png"
+import ava from "../../assets/col-md-6.png"
 
-function Section1(){
-    return (
-        <section className="sec1">
-            <img className="avatar" src={ava} alt="" />
-            <div className="text1">
-                <h1 className="tx1">Saúde natural para <br /> os seus cabelos</h1>
-                <p>Um salão exclusivo em São Paulo, <br /> especializado em tratamentos naturais.</p>
-                <button className="btn">Agendar um horário</button>
+
+function Section1() {
+  return (
+    <section className="sec1">
+        <div className="sec1left">
+            <h1>Financial <br /> Assistance With <br /> True Purpose</h1>
+            <p className="pp">We know how large objects will act, <br /> but things on a small scale.</p>
+            <div className="btns">
+                <button className="btn1">Get Quote Now</button>
+                <button className="btn2">Learn More</button>
             </div>
-        </section>
-    )
+        </div>
+        <img src={ava} alt="" />
+    </section>
+  )
 }
-
 
 export default Section1

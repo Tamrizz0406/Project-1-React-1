@@ -1,0 +1,37 @@
+/* src/components/Card1/Card1.css */
+.card1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 24px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card1:hover {
+  background-color: #ffffff1a;
+}
+
+.card1__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.card1__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card1__small {
+  font-size: 14px;
+}
+
+.card1__name {
+  font-size: 16px;
+  font-weight: 700;
+}

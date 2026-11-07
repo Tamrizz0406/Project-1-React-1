@@ -1,23 +1,30 @@
-// src/components/Header/Header.tsx
-import "./Header.css";
-import logo from "../../assets/Logo(3).png";
-import icon from "../../assets/Icon.png";
+import "./Header.css"
 
+import search from "../../assets/icn search.png"
+import cart from "../../assets/icn shopping-cart.png"
+import bar from "../../assets/icn menu.png"
 
 function Header() {
   return (
-    <nav className="nav">
-      <img className="logo" src={logo} alt="Logo" />
-      <div className="page">
-        <p>Início</p>
-        <p>Sobre</p>
-        <p>Serviços</p>
-        <p>Depoimentos</p>
-        <p>Contato</p>
+    <nav className="navbar">
+      <h2>BrandName</h2>
+      <div className="nav">
+        <img src={search} alt="" />
+        <img src={cart} alt="" />
+        <img src={bar} alt="" />
       </div>
-        <img className="bar" src={icon} alt="Icon" />
+      <div className="page">
+        <p>Home</p>
+        <p>Product</p>
+        <p>Pricing</p>
+        <p>Contact</p>
+      </div>
+      <div className="navright">
+        <p>Login</p>
+        <button className="btn">Become a member</button>
+      </div>
     </nav>
-  );
+  )
 }
 
-export default Header;
+export default Header

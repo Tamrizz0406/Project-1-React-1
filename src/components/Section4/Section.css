@@ -1,56 +1,48 @@
 
-
-.txt{
-    text-align: start;
+.download{
     margin-top: 100px;
-    padding: 10px;
-}
-
-
-.box{
-    border-color: #FFFFFF;
-    background-color: white;
-    padding: 10px;
-    width: 300px;
-    flex-shrink: 0;
-}
-.box:hover{
-    background-color: #00000014;
-}
-
-.pers{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
 
-.boxes{
-    display: flex;
-    overflow-x: auto;
-
-}
-
-
-
-
-@media (min-width:768px){
-.boxes {
-    overflow-x: visible;
-    display: flex;
-    justify-content: space-between;
-  }
-  .txt{
+.download h2{
     text-align: center;
-  }
-  .box{
-    padding: 20px 40px;
-  }
-  .box{
-    background-color: #00000014;
-    width: 400px;
+    color: white;
+}
+.download p{
+    text-align: center;
+    color: white;
+}
+
+.download__buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .download__buttons{
+        margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.download h2{
+    font-size: 38px;
+    text-align: center;
+    color: white;
+}
 
 
 }
