@@ -1,5 +1,5 @@
 import "./App.css"
-import Table from "./components/Table/Table"
+import Card from "./components/Card.tsx/Card"
 
 
 
@@ -7,7 +7,7 @@ import Table from "./components/Table/Table"
 function App() {
   return (
     <div>
-      <Table/>
+      <Card/>
     </div>
   )
 }
