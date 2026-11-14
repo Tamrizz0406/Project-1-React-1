@@ -1,10 +1,8 @@
-import "./App.css"
-import Card from "./components/Card.tsx/Card"
+import { Button } from "@base-ui/react/button"
+import Card from "./components/Card/Card"
 
 
-
-
-function App() {
+const App = () => {
   return (
     <div>
       <Card/>
