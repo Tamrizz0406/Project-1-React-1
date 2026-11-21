@@ -7,6 +7,7 @@ import axios from "axios"
 import { Button } from "@/components/ui/button"
 
 
+
 import {
   Dialog,
   DialogClose,
@@ -19,6 +20,7 @@ import {
 import { Field, FieldGroup } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from "react-router"
 
 const Home = () => {
   const api = "https://69b55733be587338e715a58f.mockapi.io/Card1"
@@ -163,6 +165,9 @@ const Home = () => {
                 <div>
                 <Button onClick={() => deleteData(el.id)} variant="destructive">Delete</Button>
                 <Button onClick={()=> openEdit(el)}>Edit</Button>
+                <Link to="/info">
+                  <Button variant="secondary">Info</Button>
+                </Link>
                 </div>
               </div>
             </div>
