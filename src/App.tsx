@@ -1,38 +1,25 @@
-import { createBrowserRouter, } from "react-router";
-import { RouterProvider } from "react-router/dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Layout from "./pages/Layout";
+import { lazy, Suspense } from "react"
+import { Routes, Route } from "react-router"
+import Layout from "./pages/Layout"
 
-
+const Home = lazy(() => import("./pages/Home"))
+const About = lazy(() => import("./pages/About"))
+const Contacts = lazy(() => import("./pages/Contacts.tsx"))
+const Faq = lazy(() => import("./pages/Faq.tsx"))
 
 const App = () => {
-  const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout/>,
-    children: [
-      {
-        index: true,
-      element: <Home/>
-    },
-      {
-        path: "/about",
-      element: <About/>
-    },
-    {
-      path:"*",
-      element:<div>NOT FOUND</div>
-    }
-    ]
-  },
-]);
-return (
-  <div>
-    <RouterProvider router={router}/>
-  </div>
-)
+  return (
+    <Suspense fallback={<p className="text-center py-10">Loading...</p>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contacts" element={<Contacts />} />
+          <Route path="faq" element={<Faq />} />
+        </Route>
+      </Routes>
+    </Suspense>
+  )
 }
-
 
 export default App
