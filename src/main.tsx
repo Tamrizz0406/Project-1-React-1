@@ -5,10 +5,10 @@ import './index.css'
 import App from './App.tsx'
 
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-   <BrowserRouter>
+    <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )

@@ -1,22 +1,16 @@
 import { Link, Outlet } from "react-router"
-import logo from "../images/Group 7.png"
+import logo from "../images/Logo(3).png"
+
+
 
 const Layout = () => {
   return (
-    <div>
-      <nav className="flex justify-between items-center max-w-[1200px] m-auto py-8">
-        <Link to="/">
-          <img src={logo} alt="" />
-        </Link>
-        <div className="flex items-center gap-10">
-          <p>0 800 750 643</p>
-          <Link to="/about">ПРО НАС</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contacts">КОНТАКТЫ</Link>
-          <button className="border-2 border-[#1064E5] px-9 py-2 rounded-3xl">Вход</button>
-          <button className="border-[#1064E5] bg-[#1064E5] text-white px-9 py-2 rounded-3xl">РЕГИСТРАЦИЯ</button>
-          <p>Рус</p>
-        </div>
+    <div className="bg-black min-h-screen">
+      <nav className="flex justify-around items-center gap-10 py-6 border-b border-gray-800 text-white">
+        <img src={logo} alt="" />
+        <Link to="/">Formik</Link>
+        <Link to="/rhf">React Hook Form</Link>
+         <button className="text-white bg-[#0A84FF] px-6 py-2 rounded-[8px] cursor-pointer">Contact Us</button>
       </nav>
 
       <Outlet />
