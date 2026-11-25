@@ -183,7 +183,7 @@ async function deleteData(id:number) {
                 <Label htmlFor="file">Image</Label>
                 <Input id="file" type="file" {...addForm.register("file")} />
                 {addForm.formState.errors.file && (
-                  <p className="text-red-500 text-sm">{addForm.formState.errors.file.message}</p>
+                  <p className="text-red-500 text-sm">{addForm.formState.errors.file.message as string}</p>
                 )}
               </Field>
             </FieldGroup>
