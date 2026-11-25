@@ -36,7 +36,6 @@ const RhfPage = () => {
     const [data, setData] = useState<any[]>([])
     const [modalAdd, setModalAdd] = useState(false)
     const [modalEdit, setModalEdit] = useState(false)
-    const [file, setFile] = useState("")
     const [editId, setEditId] = useState("")
 
     
