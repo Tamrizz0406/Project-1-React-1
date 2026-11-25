@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react"
 import { Route, Routes } from "react-router"
 import Layout from "./pages/Layout"
 
-const FormikPage = lazy(() => import("./pages/FormikPage"))
+const Home = lazy(() => import("./pages/Home"))
 const RhfPage = lazy(() => import("./pages/RhfPage"))
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <Suspense fallback={<p className="text-center py-10">Loading...</p>}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<FormikPage />} />
+          <Route path="/" element={<Home />} />
           <Route path="rhf" element={<RhfPage />} />
         </Route>
       </Routes>
