@@ -6,6 +6,8 @@ import foot from "../images/Footer Section.png"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -19,6 +21,19 @@ import { Field, FieldGroup } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+// схема для добавления
+const addSchema = z.object({
+  name: z.string().min(2, "Минимум 2 символа"),
+  description: z.string().min(5, "Минимум 5 символов"),
+  file: z.any().refine((files) => files?.length > 0, "Выберите картинку"),
+})
+
+// схема для редактирования
+const editSchema = z.object({
+  name: z.string().min(2, "Минимум 2 символа"),
+  description: z.string().min(5, "Минимум 5 символов"),
+})
+
 const RhfPage = () => {
   const base = "https://to-dos-api.softclub.tj"
   const api = `${base}/api/to-dos`
@@ -28,8 +43,10 @@ const RhfPage = () => {
   const [modalEdit, setModalEdit] = useState(false)
   const [editId, setEditId] = useState(0)
 
-  const addForm = useForm()
-  const editForm = useForm()
+  // форма добавления
+  const addForm = useForm({ resolver: zodResolver(addSchema) })
+  // форма редактирования
+  const editForm = useForm({ resolver: zodResolver(editSchema) })
 
   async function getData() {
     try {
@@ -128,6 +145,7 @@ const RhfPage = () => {
         })}
       </div>
 
+      {/* ADD */}
       <Dialog open={modalAdd} onOpenChange={setModalAdd}>
         <DialogContent className="sm:max-w-sm">
           <form onSubmit={addForm.handleSubmit(addData)} className="grid gap-4">
@@ -137,15 +155,24 @@ const RhfPage = () => {
             <FieldGroup>
               <Field>
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" {...addForm.register("name", { required: true })} />
+                <Input id="name" {...addForm.register("name")} />
+                {addForm.formState.errors.name && (
+                  <p className="text-red-500 text-sm">{addForm.formState.errors.name.message as string}</p>
+                )}
               </Field>
               <Field>
                 <Label htmlFor="description">Description</Label>
-                <Input id="description" {...addForm.register("description", { required: true })} />
+                <Input id="description" {...addForm.register("description")} />
+                {addForm.formState.errors.description && (
+                  <p className="text-red-500 text-sm">{addForm.formState.errors.description.message as string}</p>
+                )}
               </Field>
               <Field>
                 <Label htmlFor="file">Image</Label>
-                <Input id="file" type="file" {...addForm.register("file", { required: true })} />
+                <Input id="file" type="file" {...addForm.register("file")} />
+                {addForm.formState.errors.file && (
+                  <p className="text-red-500 text-sm">{addForm.formState.errors.file.message as string}</p>
+                )}
               </Field>
             </FieldGroup>
             <DialogFooter>
@@ -156,6 +183,7 @@ const RhfPage = () => {
         </DialogContent>
       </Dialog>
 
+      {/* EDIT */}
       <Dialog open={modalEdit} onOpenChange={setModalEdit}>
         <DialogContent className="sm:max-w-sm">
           <form onSubmit={editForm.handleSubmit(editData)} className="grid gap-4">
@@ -165,11 +193,17 @@ const RhfPage = () => {
             <FieldGroup>
               <Field>
                 <Label htmlFor="edit-name">Name</Label>
-                <Input id="edit-name" {...editForm.register("name", { required: true })} />
+                <Input id="edit-name" {...editForm.register("name")} />
+                {editForm.formState.errors.name && (
+                  <p className="text-red-500 text-sm">{editForm.formState.errors.name.message as string}</p>
+                )}
               </Field>
               <Field>
                 <Label htmlFor="edit-description">Description</Label>
-                <Input id="edit-description" {...editForm.register("description", { required: true })} />
+                <Input id="edit-description" {...editForm.register("description")} />
+                {editForm.formState.errors.description && (
+                  <p className="text-red-500 text-sm">{editForm.formState.errors.description.message as string}</p>
+                )}
               </Field>
             </FieldGroup>
             <DialogFooter>
